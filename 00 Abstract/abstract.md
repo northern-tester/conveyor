@@ -24,7 +24,7 @@ We believe that after the workshop each attendee will be able to:
 
 * Recognise the terminology and techniques applied to building and maintaining deployment pipelines
 * Understand the principles of pipeline design through analysing new or existing tests, test strategies and environments available.
-* Apply these principles to building a multi stage pipeline with Jenkins 
+* Apply these principles to building a multi stage pipeline with Jenkins
 
 ## Experience and relevance
 
