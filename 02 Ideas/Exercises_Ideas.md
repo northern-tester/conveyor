@@ -26,7 +26,7 @@
 * Docker
 * Pull a jenkins docker image and do the setup steps - prerequisite
 * Git installed on the jenkins - some guidance on plugins
-* Clone and install restful booker
+* Clone and install restful booker - explain a bit about restful booker
 * Github account
 
 ## Exercises
@@ -34,17 +34,30 @@
 ### Recognise the terminology and techniques applied to building and maintaining deployment pipelines (10-20mins)
 
 * This is our 0-5 exercise
+* Docker - introduction to containers
+  * Get everyone installed
+  * Difference between containers, VM and host
+* Jenkins - introduction to pipelines
+  * Get everyone installed, setup steps
+  * How/what is a pipeline - codification of a set of manual steps
+* Github - clone the repos needed
 
 ### Understand the principles of pipeline design through analysing new or existing tests, test strategies and environments available (20-30mins)
 
-* Take a test strategy for restful booker - build a pipeline with various steps
+* Pipelines not only automated, they can have manual steps
+* They need to report on their progress, alert on failure
+* Ask for examples of how their pipelines work - draw it.
+* Take a test strategy for restful booker - build a pipeline with various steps 
+  * Pauses at test so testers can get builds when ready
+* Agile testing quadrants - acceptance test, unit...
+* Environments to step through - dev, int, test, pre-prod, prod.
 * Paper exercise - values of the users, risks of the application
 
 ### Apply these principles to building a multi stage pipeline with Jenkins (The Rest)
 
 * Basics of Jenkins - jobs, credentials, source control, branch of restful booker with a Jenkinsfile
 * Build a dev version, then run acceptance test
-* Intentionally break some tests, debug and fix
+* Intentionally break some tests, debug and fix - before workshop - get the attendees to fix them
 * Build something like UAT, then have a pause in your pipeline, exploratory testing
 * Security scanner step
 * If all good deploy to Prod
