@@ -24,6 +24,7 @@
   * Match the commands to their use cases
 * Jenkins
   * Do the pull latest jenkins instance and maybe a docker agent
+  * Also, do the jenkins login thing where we cat the code and create a user
   * Match the jenkins terminology to explanation and use case
 
 ### Reflect - Review the experience
