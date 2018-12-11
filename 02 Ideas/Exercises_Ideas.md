@@ -37,6 +37,7 @@
 * Docker - introduction to containers
   * Get everyone installed
   * Difference between containers, VM and host
+  * Match terminology to term
 * Jenkins - introduction to pipelines
   * Get everyone installed, setup steps
   * How/what is a pipeline - codification of a set of manual steps
@@ -47,7 +48,8 @@
 * Pipelines not only automated, they can have manual steps
 * They need to report on their progress, alert on failure
 * Ask for examples of how their pipelines work - draw it.
-* Take a test strategy for restful booker - build a pipeline with various steps 
+* Timing is important - how long a build takes - introduce parallelism
+* Take a test strategy for restful booker - build a pipeline with various steps
   * Pauses at test so testers can get builds when ready
 * Agile testing quadrants - acceptance test, unit...
 * Environments to step through - dev, int, test, pre-prod, prod.
@@ -55,7 +57,10 @@
 
 ### Apply these principles to building a multi stage pipeline with Jenkins (The Rest)
 
-* Basics of Jenkins - jobs, credentials, source control, branch of restful booker with a Jenkinsfile
+* Snippets of code - steps in the declarative style
+* Initial walkthrough to get a simple pipeline setup
+* Basics of Jenkins - agents, jobs, credentials, source control, branch of restful booker with a Jenkinsfile
+* Parallel vs Sequential steps - tests maybe able to run in parallel, security scans can take a little longer
 * Build a dev version, then run acceptance test
 * Intentionally break some tests, debug and fix - before workshop - get the attendees to fix them
 * Build something like UAT, then have a pause in your pipeline, exploratory testing
