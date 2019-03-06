@@ -24,8 +24,9 @@
   * Resilient - put you back into a known state.
   * Increasing confidence throughout the pipeline.
   * Excellent configuartion management.
-  * Make your pipeline wide, not long
+  * Make your pipeline wide, not long - use paralellism
   * Can we use CALMS as a summary here, then fit the principles in.
+  * Introduce CALMS as a model then fit the principles of pipelines in. Create a handout.
 
 * In terms of types of exercise, we want to introduce some realism in there.
 * Want to try and avoid lots of looking at paper and reading to convey a scenario. Best to try and get them to discuss.
@@ -36,6 +37,10 @@
     * A number of environments and how they compare to live
     * A description of the system itself - microservices that are on containers that autoscale - show this as a dataflow
     * Types of testing strategy - use the agile testing quadrants
+    * Groups of 4 - get them to pick a pipeline owner and ask them to describe the three aspects above for their own systems.
+    * Ask what they are comfortable sharing.
+    * Use value stream mapping as a concept 
+    * Provide a key for what each stage should look like.
 
 ### What I think we should do
 
