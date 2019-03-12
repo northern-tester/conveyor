@@ -41,15 +41,3 @@
     * Ask what they are comfortable sharing.
     * Use value stream mapping as a concept 
     * Provide a key for what each stage should look like.
-
-### What I think we should do
-
-* Introduce the principles - group discussion - 
-
-### Experience - Do Something
-
-### Reflect - Review the experience
-
-### Learn - Conclude from the reflection
-
-### Experiment - Try out what you have learnt
