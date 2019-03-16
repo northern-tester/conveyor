@@ -1,0 +1,38 @@
+pipeline {
+    agent {
+    	docker {
+        	image 'mwinteringham/restfulbookerplatform_room'
+        	registryUrl 'https://index.docker.io/v1/'
+    	}
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+        parallel {
+            stage('Test on UAT') {
+                steps {
+                    echo 'Testing on UAT..'
+                }
+            }
+            stage('Test on Stage') {
+                steps {
+                    echo 'Testing on Stage..'
+                }
+            }
+        }
+        }    
+        stage('Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    
+    }
+}
