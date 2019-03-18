@@ -23,3 +23,5 @@ We should set a challenge here to build a multi stage pipeline for Restful Booke
 * Build the app and run the unit and integration tests on dev
 * Deploy the app and run end to end tests on system test
 * Deploy the app and run end to end tests with a smoke test tag on stage
+* Add a paused for input sections to the pipeline
+* Build jenkins jobs for all the above, then get them to build the pipeline
