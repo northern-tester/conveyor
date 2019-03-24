@@ -1,0 +1,89 @@
+pipeline {
+    agent any
+    triggers {
+    	pollSCM 'H/5 * * * *'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr:'1'))
+        disableConcurrentBuilds()
+        timeout(time: 5, unit: 'MINUTES')
+        timestamps()
+    }
+    tools {
+        maven 'maven3'
+    }
+    stages {
+        stage('Checkout and Build') {
+            steps {
+                echo 'Build ID: ${env.BUILD_NUMBER}'
+                sh 'mvn clean'
+            }
+        }
+        stage('Unit Test') {
+            steps {
+                echo 'Running unit test'
+                sh 'mvn test'
+           }
+        }
+        stage('Test'){
+        parallel {
+            stage('Integration Test') {
+                steps {
+                    echo 'Running integration test'
+                    echo 'Visual skip test set to true'
+                    sh 'mvn integration-test -DskipITs=true'
+                }
+            }
+            stage('Test on Stage') {
+                steps {
+                    echo 'Testing on Stage..'
+                }
+            }
+        }
+        }
+        stage('Build Package') {
+            steps {
+                withMaven(options: [findbugsPublisher(), junitPublisher(ignoreAttachments: false)]) {
+                    sh 'mvn clean findbugs:findbugs package'
+                }
+            }
+            post {
+                always {
+                    echo 'Current build number is : , ${env.BUILD_NUMBER}'
+                }
+                aborted {
+                    echo 'BUILD ABORTED'
+                }
+                success {
+                    echo 'BUILD SUCCESS'
+                }
+                unstable {
+                    echo 'BUILD UNSTABLE'
+                }
+                failure {
+                    echo 'BUILD FAILURE'
+                }
+
+            }
+        }
+      stage('Reports') {
+        steps {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true, allowEmptyArchive: true
+        }
+     }
+     stage('Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+     stage('Clean-up') {
+        steps {
+            deleteDir()
+        }
+     }
+    }
+}
