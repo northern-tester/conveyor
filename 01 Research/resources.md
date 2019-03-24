@@ -8,6 +8,7 @@
 
 * CALMS - <https://devops.com/using-calms-to-assess-organizations-devops/>
 * Neal Ford - <http://nealford.com/downloads/Continuous_Delivery_1of3_Deployment_Pipelines_Neal_Ford.pdf>
+* Patrick Wolf - CloudBees - <https://dzone.com/refcardz/declarative-pipeline-with-jenkins?chapter=13>
 
 ## Applications
 
@@ -15,4 +16,8 @@
 
 ## Cheat Sheets
 
-* Docker cheat sheet <https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf>
+* Docker cheat sheet - <https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf>
+
+## GitHub Projects
+
+* Pipeline Examples - <https://github.com/jenkinsci/pipeline-examples/tree/master/declarative-examples>
