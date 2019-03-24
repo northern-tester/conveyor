@@ -43,6 +43,18 @@
   * How/what is a pipeline - codification of a set of manual steps
 * Github - clone the repos needed
 
+### Build a multi stage pipeline with Jenkins (The Rest)
+
+* Snippets of code - steps in the declarative style
+* Initial walkthrough to get a simple pipeline setup
+* Basics of Jenkins - agents, jobs, credentials, source control, branch of restful booker with a Jenkinsfile
+* Parallel vs Sequential steps - tests maybe able to run in parallel, security scans can take a little longer
+* Build a dev version, then run acceptance test
+* Intentionally break some tests, debug and fix - before workshop - get the attendees to fix them
+* Build something like UAT, then have a pause in your pipeline, exploratory testing
+* Security scanner step
+* If all good deploy to Prod
+
 ### Understand the principles of pipeline design through analysing new or existing tests, test strategies and environments available (20-30mins)
 
 * Pipelines not only automated, they can have manual steps
@@ -55,14 +67,4 @@
 * Environments to step through - dev, int, test, pre-prod, prod.
 * Paper exercise - values of the users, risks of the application
 
-### Apply these principles to building a multi stage pipeline with Jenkins (The Rest)
 
-* Snippets of code - steps in the declarative style
-* Initial walkthrough to get a simple pipeline setup
-* Basics of Jenkins - agents, jobs, credentials, source control, branch of restful booker with a Jenkinsfile
-* Parallel vs Sequential steps - tests maybe able to run in parallel, security scans can take a little longer
-* Build a dev version, then run acceptance test
-* Intentionally break some tests, debug and fix - before workshop - get the attendees to fix them
-* Build something like UAT, then have a pause in your pipeline, exploratory testing
-* Security scanner step
-* If all good deploy to Prod
