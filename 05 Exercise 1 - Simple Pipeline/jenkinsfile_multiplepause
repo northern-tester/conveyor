@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+          input {
+        		message "Press Ok to continue"
+        		submitter "user1,user2"
+        		parameters {
+        			string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
+        		}
+        	}
+        	steps {
+        		echo "User: ${username} said Ok."
+        	}
+        }
+        stage('Test'){
+        parallel {
+          stage('Acceptance Test') {
+            steps {
+                echo 'Acceptance Test'
+              }
+          }
+          stage('Exploratory Test') {
+            steps {
+                echo 'Exploratory Test'
+                runExploratoryTest()
+              }
+          }
+        stage('Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploy'
+           }
+        }
+     }
+}
+
+def runExploratoryTest() {
+    timeout(time:1, unit:'DAYS') {
+	  input('Exploratory test passed?')
+    }
+}

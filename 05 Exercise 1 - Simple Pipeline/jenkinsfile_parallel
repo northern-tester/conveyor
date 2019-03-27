@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    options {
+        parallelsAlwaysFailFast()
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build'
+            }
+        }
+        stage('Test'){
+        parallel {
+          stage('Unit Test') {
+            steps {
+                echo 'Unit Test'
+              }
+          }
+          stage('Acceptance Test') {
+            steps {
+                echo 'Acceptance Test'
+              }
+          }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy'
+           }
+        }
+     }
+}

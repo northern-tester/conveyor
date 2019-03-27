@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build'
+            }
+        }
+        stage('Test'){
+        parallel {
+          stage('Acceptance Test') {
+            steps {
+                echo 'Acceptance Test'
+              }
+          }
+          stage('Exploratory Test') {
+            steps {
+                echo 'Exploratory Test'
+                runExploratoryTest()
+              }
+          }
+        stage('Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploy'
+           }
+        }
+     }
+}
+
+def runExploratoryTest() {
+    timeout(time:1, unit:'DAYS') {
+	  input('Exploratory test passed?')
+    }
+}
